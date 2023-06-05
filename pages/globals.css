@@ -30,7 +30,7 @@ a {
 }
 
 .none {
-  display: none;
+  display: none !important;
 }
 
 /* =====================Navbar====================== */
@@ -99,4 +99,55 @@ a {
 .dropdown__wrapper p {
   font-weight: 500;
   cursor: pointer;
+}
+
+.mobile__nav {
+  display: none;
+}
+
+/* ============= Mobile Navbar============== */
+@media screen and (max-width: 768px) {
+  .logo__div img {
+    height: 2rem;
+  }
+
+  @keyframes sidebar {
+    0% {
+      margin-left: -25%;
+    }
+
+    100% {
+      margin-left: 0%;
+    }
+  }
+
+  .nav__links {
+    display: none;
+  }
+
+  .hamburger {
+    display: flex !important;
+    font-size: 2rem;
+    margin-right: 0.2rem;
+  }
+
+  .mobile__nav {
+    position: absolute;
+    display: flex;
+    top: 4.5rem;
+    left: 0px;
+    flex-direction: column;
+    gap: 1rem;
+    padding: 2rem 1rem;
+    background-color: var(--white-text-color);
+    height: 100vh;
+    -webkit-backdrop-filter: blur(100px);
+    backdrop-filter: blur(100px);
+    /* opacity: 0.8; */
+    animation: sidebar 0.2s;
+  }
+
+  .mobile__nav a {
+    color: black;
+  }
 }

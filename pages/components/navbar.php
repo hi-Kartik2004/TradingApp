@@ -38,5 +38,21 @@
             </div>
         </div>
 
+        <div class="hamburger none" id = "hamburger">
+            <i class='bx bx-menu-alt-left'></i>
+        </div>
+
+        <div class="mobile__nav none" id="mobile-nav">
+            <a href="?home">Home</a>
+            <a href="?exchange">Exchange</a>
+            <a href="?exchange">Buy Stocks</a>
+            <a href="?exchange">Sell Stocks</a>
+            <a href="?exchange">Open order</a>
+            <a href="?exchange">Trade History</a>
+            <a href="?exchange">Login</a>
+            <a href="?exchange">Register</a>
+            <a href="?exchange">[profile]</a>
+        </div>
+
     </div>
 </section>
