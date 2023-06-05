@@ -1,6 +1,102 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;500;700&family=Poppins:wght@300;400;500;600;700;800;900&display=swap");
+
 * {
   margin: 0px;
   padding: 0px;
   box-sizing: border-box;
-  /* background-color: red; */
+  background-color: var(--blueish-color);
+  color: var(--white-text-color);
+  font-family: "Nunito Sans", sans-serif;
+  font-family: "Poppins", sans-serif;
+}
+
+/* ==============Varaibles================= */
+:root {
+  --black-color: #0d0d0d;
+  --blueish-color: #070d12;
+  --green-color: #00994c;
+  --black-color: #000000;
+  --gray-color: #202025;
+  --white-text-color: #fff;
+}
+
+/* =================Utility Classes================= */
+
+a {
+  list-style: none;
+  text-decoration: none;
+  font-size: 1rem;
+  background-color: transparent;
+}
+
+.none {
+  display: none;
+}
+
+/* =====================Navbar====================== */
+
+.navbar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--black-color);
+}
+
+.navbar__wrapper {
+  max-width: 1200px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.75rem 0.5rem;
+  background-color: var(--black-color);
+}
+
+.logo__div img {
+  height: 3rem;
+}
+
+.nav__links {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.nav__links a {
+  font-weight: 500;
+}
+
+/* =============== Handling Dropdowns ===========*/
+#finance-wrapper {
+  position: relative;
+}
+
+.relative {
+  position: relative;
+}
+
+.dropdown {
+  position: absolute;
+  top: 2rem;
+  left: 0px;
+  right: 0px;
+  background-color: var(--black-color);
+  padding: 0.75rem 0.5rem;
+  border-radius: 0.2rem;
+  width: 6.8rem;
+  border: 2px solid var(--gray-color);
+}
+
+.dropdown a {
+  font-size: 0.8rem;
+}
+
+.dropdown a:hover {
+  color: var(--green-color);
+}
+
+.dropdown__wrapper p {
+  font-weight: 500;
+  cursor: pointer;
 }
