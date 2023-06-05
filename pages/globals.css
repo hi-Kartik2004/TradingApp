@@ -14,7 +14,7 @@
 :root {
   --black-color: #0d0d0d;
   --blueish-color: #070d12;
-  --green-color: #00994c;
+  --green-color: #5bc5ff;
   --black-color: #000000;
   --gray-color: #202025;
   --white-text-color: #fff;
@@ -40,6 +40,10 @@ a {
   justify-content: center;
   align-items: center;
   background-color: var(--black-color);
+  position: absolute;
+  top: 0px;
+  width: 100%;
+  z-index: 99999999;
 }
 
 .navbar__wrapper {
