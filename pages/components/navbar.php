@@ -1,5 +1,7 @@
 <!-- <h1>This is navbar</h1> -->
-
+<?php
+session_start();
+?>
 <section class="navbar">
 
 
@@ -31,11 +33,16 @@
             </div>
 
             <!-- <a href="#" id="report-link">Report <i class='bx bx-chevron-down'></i></a> -->
-            <a href="?login">Login</a>
-            <a href="?register">Register</a>
-            <div class="profile__link none">
-                <a href="?user=temp">profile</a>
-            </div>
+            <?php
+            if (isset($_SESSION['login']['status']) && $_SESSION["login"]["status"]) {
+                echo '    <div class="profile__link">
+                    <a href="?user=temp">profile</a>
+                </div>';
+            } else {
+                echo '            <a href="?login">Login</a>
+                <a href="?register">Register</a>';
+            }
+            ?>
         </div>
 
         <div class="hamburger none" id="hamburger">

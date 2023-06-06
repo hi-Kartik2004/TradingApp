@@ -39,6 +39,23 @@
   background-color: var(--gray-color);
 }
 
+/* ================ Handling error =============== */
+.error {
+  background-color: rgba(255, 230, 0, 0.384) !important;
+  padding: 0.5rem 0.7rem;
+  border-radius: 0.5rem;
+  display: flex;
+  /* max-width: 400px;
+  width: 100%; */
+}
+
+.err__content {
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  gap: 0.5rem;
+}
+
 /* ==============Varaibles================= */
 :root {
   --black-color: #0d0d0d;
@@ -312,6 +329,7 @@ form {
   align-items: center;
   /* background-color: red; */
   padding: 2rem 1rem;
+  flex-direction: column;
 }
 
 .login__card {

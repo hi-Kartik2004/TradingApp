@@ -1,4 +1,7 @@
 <?php
+// starting session for handling errors;
+
+session_start();
 
 // This the head of the html
 include("pages/components/head.php");

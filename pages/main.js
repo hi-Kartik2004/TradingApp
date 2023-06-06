@@ -22,6 +22,8 @@ for (let i = 0; i < allDropDownLinks.length; i++) {
   });
 }
 
+
+
 // ============= mobile Nav ===========
 
 const mobileNav = document.getElementById("mobile-nav");
@@ -30,8 +32,6 @@ const hamburger = document.getElementById("hamburger");
 hamburger.addEventListener("click", () => {
   mobileNav.classList.toggle("none");
 });
-
-
 
 // =============== Handling url ==============
 
