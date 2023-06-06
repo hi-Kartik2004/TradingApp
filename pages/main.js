@@ -38,3 +38,11 @@ const checkbox = document.getElementById("checkbox");
 rememberMe.addEventListener("click", () => {
   checkbox.checked = !checkbox.checked;
 });
+
+// ========= Caurosal ===============
+var swiper = new Swiper(".mySwiper", {
+  pagination: {
+    el: ".swiper-pagination",
+    dynamicBullets: true,
+  },
+});

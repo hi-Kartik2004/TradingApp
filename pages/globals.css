@@ -11,11 +11,39 @@
   font-family: "Poppins", sans-serif;
 }
 
+/* =========== Scrollbar =========== */
+/* Track */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background-color: #696969;
+  border-radius: 4px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background-color: #525252;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background-color: var(--gray-color);
+  /* background-color: #f5f5f5; */
+}
+
+/* Track on hover */
+::-webkit-scrollbar-track:hover {
+  background-color: var(--gray-color);
+}
+
 /* ==============Varaibles================= */
 :root {
   --black-color: #0d0d0d;
   --blueish-color: #070d12;
-  --green-color: #5bc5ff;
+  --green-color: #76ff57;
   --black-color: #000000;
   --gray-color: #202025;
   --white-text-color: #fff;
@@ -34,6 +62,7 @@ h5,
 h6 {
   padding: 0px;
   margin: 0px;
+  background-color: transparent;
 }
 
 h1 {
@@ -67,6 +96,7 @@ p {
 span {
   font-size: 0.75rem;
   opacity: 0.8;
+  background-color: transparent;
 }
 
 input {
@@ -92,8 +122,32 @@ a {
   -webkit-user-select: none;
 }
 
+u {
+  background-color: transparent;
+  text-underline-offset: 0.35rem;
+}
+
+.container {
+  max-width: 1200px;
+  width: 100%;
+}
+
+div,
+p {
+  background-color: transparent;
+}
+
 .none {
   display: none !important;
+}
+
+i {
+  background-color: transparent;
+  font-size: 22px;
+}
+
+.first__div {
+  margin-top: 2rem;
 }
 
 /* =====================Navbar====================== */
@@ -107,6 +161,7 @@ a {
   top: 0px;
   width: 100%;
   z-index: 99999999;
+  /* margin-bottom: 2rem; */
 }
 
 .navbar__wrapper {
@@ -175,6 +230,12 @@ a {
   display: none;
 }
 
+.dropdown-link {
+  display: flex;
+  align-items: center;
+  gap: 0.2rem;
+}
+
 /* ============= Mobile Navbar============== */
 @media screen and (max-width: 768px) {
   .logo__div img {
@@ -225,12 +286,12 @@ a {
 /* ==============Login Card============ */
 
 .login__wrapper {
-  margin-top: 10rem;
+  margin-top: 6rem;
   display: flex;
   justify-content: center;
   align-items: center;
   /* background-color: red; */
-  padding: 0rem 1rem;
+  padding: 2rem 1rem;
 }
 
 .login__card {
@@ -300,6 +361,7 @@ h5 {
   background-color: var(--btn--color);
   width: 7rem;
   border-radius: 0.2rem;
+  cursor: pointer;
 }
 
 #remember-me {
@@ -309,7 +371,7 @@ h5 {
 
 @media screen and (max-width: 376px) {
   .login__wrapper {
-    margin-top: 8rem !important;
+    margin-top: 5rem !important;
   }
 }
 
@@ -360,4 +422,318 @@ h5 {
     flex-direction: column;
     gap: 1rem;
   }
+}
+
+/* ========= Footer ========== */
+.footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--gray-color);
+}
+
+.footer__wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: row;
+  background-color: var(--gray-color);
+  padding-top: 3rem;
+  padding-bottom: 5rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+.footer__left,
+.footer__right,
+.usefull__links {
+  background-color: transparent;
+}
+
+.footer__left img {
+  height: 3rem;
+  background-color: var(--gray-color);
+}
+
+.footer__right {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 5rem;
+}
+
+.usefull__links,
+.footer__left {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+
+.footer__links {
+  display: flex;
+  /* align-items: center; */
+  flex-direction: column;
+  gap: 0.5rem;
+  /* justify-content: center; */
+}
+.footer__links a {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+@media screen and (max-width: 720px) {
+  .footer__wrapper {
+    flex-direction: column-reverse;
+    gap: 5rem;
+  }
+
+  .footer__left {
+    text-align: center;
+  }
+}
+
+@media screen and (max-width: 510px) {
+  .footer__right {
+    flex-wrap: wrap;
+    padding: 0rem 2rem;
+    /* text-align: cenetr; */
+    justify-content: center;
+  }
+}
+
+/* ========== Register ============= */
+.register__firstline {
+  display: flex;
+  gap: 1rem;
+  justify-content: space-between;
+}
+
+.register__card {
+  max-width: 550px;
+  width: 100%;
+
+  padding: 2rem 2rem;
+  border: 2px solid var(--darker-border-color);
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.register__foot {
+  display: flex;
+  flex-direction: column;
+}
+
+.register__btn__wrapper {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  gap: 2rem;
+}
+.register__green__btn {
+  background-color: var(--btn--color);
+  /* width: 7rem; */
+  border-radius: 0.2rem;
+  padding: 0.7rem 1rem;
+  cursor: pointer;
+}
+
+.register__btn__wrapper u {
+  text-underline-offset: 0.35rem;
+}
+
+@media screen and (max-width: 586px) {
+  .register__firstline {
+    flex-direction: column;
+  }
+}
+/* ========= Caurosal ========= */
+
+@media screen and (max-width: 768px) {
+  .swiper-button-next,
+  .swiper-button-prev {
+    display: none;
+  }
+}
+
+.hero__section {
+  position: relative;
+}
+.swiper {
+  width: 100%;
+  height: 85vh;
+}
+
+.swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  background: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.swiper-slide img {
+  /* display: block; */
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.autoplay-progress {
+  position: absolute;
+  right: 16px;
+  bottom: 16px;
+  z-index: 10;
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  color: var(--swiper-theme-color);
+}
+
+.autoplay-progress svg {
+  --progress: 0;
+  position: absolute;
+  left: 0;
+  top: 0px;
+  z-index: 10;
+  width: 100%;
+  height: 100%;
+  stroke-width: 4px;
+  stroke: var(--swiper-theme-color);
+  fill: none;
+  stroke-dashoffset: calc(125.6 * (1 - var(--progress)));
+  stroke-dasharray: 125.6;
+  transform: rotate(-90deg);
+  background-color: transparent;
+}
+
+#slider1 {
+  background-image: url("./img/slider1.png");
+  height: 90vh;
+  background-size: cover;
+  background-position: center;
+  -webkit-backdrop-filter: blur(1000px);
+  backdrop-filter: blur(1000px);
+  opacity: 0.8;
+}
+#slider2 {
+  background-image: url("./img/slider2.png");
+  height: 90vh;
+  background-size: cover;
+  background-position: center;
+  backdrop-filter: blur(100px);
+  opacity: 0.8;
+}
+
+/*  =========== Slider content========== */
+.slider1__content__wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+  align-items: center;
+  justify-content: center;
+}
+.slider1__heading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  padding: 0rem 1rem;
+}
+
+.hero__green__btn {
+  padding: 0.7rem 1rem;
+  background-color: var(--btn--color);
+  width: 10rem;
+  border-radius: 0.2rem;
+  cursor: pointer;
+}
+
+/* ================= About section ============== */
+.about__wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* background-color: green !important; */
+  /* background-color: var(--white-color); */
+}
+
+.about {
+  padding: 3.5rem 1rem;
+  max-width: 1200px;
+  width: 100%;
+  text-align: center;
+  /* background-color: var(--gray-color); */
+}
+
+/*  =============== hero stocks details ================= */
+.hero__stocks__wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--gray-color);
+  padding: 3rem 0.5rem;
+  flex-direction: column;
+  gap: 2.5rem;
+}
+
+.hero__stocks {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+  gap: 1rem; /* specify the desired gap value */
+  justify-items: center; /* horizontally center the items */
+  align-items: center; /* vertically center the items */
+}
+
+.stocks__card {
+  /* background-color: red; */
+  background-color: var(--blueish-color);
+  max-width: 300px;
+  width: 100%;
+  padding: 2rem 1rem;
+  border-radius: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  border: 2px solid var(--border-color);
+  transition: all 0.2s;
+  cursor: pointer;
+}
+
+.stocks__card:hover {
+  box-shadow: 4px 4px 20px 1px rgba(135, 135, 135, 0.2);
+}
+
+.hero__stocks img {
+  height: 1.5rem;
+}
+
+.hero__stocks i {
+  font-size: 2.5rem;
+}
+
+.card__top {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.card__bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.card__heading {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 0rem;
 }
