@@ -5,7 +5,7 @@
 
     <div class="navbar__wrapper">
         <div class="logo__div">
-            <img src="pages/img/logo4.png" alt="logo">
+            <a href="?home"><img src="pages/img/logo4.png" alt="logo"></a>
         </div>
 
         <div class="nav__links">

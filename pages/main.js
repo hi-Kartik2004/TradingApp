@@ -31,18 +31,23 @@ hamburger.addEventListener("click", () => {
   mobileNav.classList.toggle("none");
 });
 
+
+
+// =============== Handling url ==============
+
+// console.log("Hi testing");
+const url = window.location.href;
+const baseUrl = url.split("?")[0]; // Get the base URL without the query string
+
+if (!url.includes("?")) {
+  const newUrl = `${baseUrl}?home=firstTime`;
+  window.location.href = newUrl;
+}
+
 // ============= Handling remember me ============
 const rememberMe = document.getElementById("remember-me");
 const checkbox = document.getElementById("checkbox");
 
 rememberMe.addEventListener("click", () => {
   checkbox.checked = !checkbox.checked;
-});
-
-// ========= Caurosal ===============
-var swiper = new Swiper(".mySwiper", {
-  pagination: {
-    el: ".swiper-pagination",
-    dynamicBullets: true,
-  },
 });
