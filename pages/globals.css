@@ -50,6 +50,9 @@
   --border-color: rgba(112, 128, 144, 0.3);
   --darker-border-color: rgba(112, 128, 144, 0.5);
   --btn--color: #157000;
+  --light-gray-color: #343439;
+  --white-color: #ffffff;
+  --card-color: #0d1016;
 }
 
 /* =================Utility Classes================= */
@@ -106,6 +109,9 @@ input {
   border: 2px solid var(--border-color);
   background-color: var(--gray-color);
   font-size: 1rem;
+  max-width: 450px;
+  width: 100%;
+  min-width: 200px;
 }
 
 button {
@@ -148,6 +154,10 @@ i {
 
 .first__div {
   margin-top: 2rem;
+}
+
+form {
+  background-color: transparent;
 }
 
 /* =====================Navbar====================== */
@@ -493,10 +503,10 @@ h5 {
   }
 }
 
-@media screen and (max-width: 510px) {
+@media screen and (max-width: 490px) {
   .footer__right {
     flex-wrap: wrap;
-    padding: 0rem 2rem;
+    /* padding: 0rem 2rem; */
     /* text-align: cenetr; */
     justify-content: center;
   }
@@ -662,7 +672,7 @@ h5 {
   align-items: center;
   justify-content: center;
   /* background-color: green !important; */
-  /* background-color: var(--white-color); */
+  background-color: var(--blueish-color);
 }
 
 .about {
@@ -670,7 +680,7 @@ h5 {
   max-width: 1200px;
   width: 100%;
   text-align: center;
-  /* background-color: var(--gray-color); */
+  background-color: var(--blueish-color);
 }
 
 /*  =============== hero stocks details ================= */
@@ -678,7 +688,7 @@ h5 {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: var(--gray-color);
+  background-color: var(--blueish-color);
   padding: 3rem 0.5rem;
   flex-direction: column;
   gap: 2.5rem;
@@ -694,7 +704,7 @@ h5 {
 
 .stocks__card {
   /* background-color: red; */
-  background-color: var(--blueish-color);
+  background-color: var(--card-color);
   max-width: 300px;
   width: 100%;
   padding: 2rem 1rem;
@@ -736,4 +746,56 @@ h5 {
   align-items: center;
   flex-direction: column;
   gap: 0rem;
+}
+
+/* ============== News Letter ============ */
+.newsletter {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background-color: var(--gray-color);
+  /* border-radius-: 2rem; */
+  border-top-left-radius: 2.5rem;
+  border-top-right-radius: 2.5rem;
+  border-bottom: 2px solid var(--border-color);
+}
+
+.newsletter__wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 3rem;
+  padding: 3rem 1rem;
+}
+
+form {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+}
+
+#subscribe-input {
+  padding: 0.7rem 0.7rem;
+  border-radius: 1rem;
+  font-size: 1.5 rem;
+  width: 30vw;
+}
+
+#subscribe-btn {
+  /* padding: rem 2rem !important; */
+  padding: 0.8rem 0.8rem !important;
+  border-radius: 0.6rem;
+}
+
+@media screen and (max-width: 425px) {
+  .newsletter__wrapper {
+    padding: 2rem 0.5rem;
+  }
+
+  form {
+    flex-direction: column;
+  }
 }
