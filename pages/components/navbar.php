@@ -1,6 +1,7 @@
 <!-- <h1>This is navbar</h1> -->
 <?php
-session_start();
+error_reporting(0);
+// session_start();
 ?>
 <section class="navbar">
 
@@ -9,7 +10,7 @@ session_start();
         <div class="logo__div">
             <a href="?home"><img src="pages/img/logo4.png" alt="logo"></a>
         </div>
-
+        
         <div class="nav__links">
             <a href="?home">Home</a>
             <a href="?exchange">Exchange</a>
@@ -36,7 +37,13 @@ session_start();
             <?php
             if (isset($_SESSION['login']['status']) && $_SESSION["login"]["status"]) {
                 echo '    <div class="profile__link">
-                    <a href="?user=temp">profile</a>
+                <div id="trade-wrapper" class="relative dropdown__wrapper">
+                <p id="trade-link" class="dropdown-link">Profile <i class="bx bx-chevron-down"></i></p>
+                <div id="trade-dropdown" class="none dropdown">
+                    <a href="?profile">View Profile</a>
+                    <a href="?logout">Logout</a>
+                </div>
+            </div>
                 </div>';
             } else {
                 echo '            <a href="?login">Login</a>

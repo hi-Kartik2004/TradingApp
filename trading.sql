@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Jun 06, 2023 at 09:08 PM
+-- Generation Time: Jun 07, 2023 at 07:19 PM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 8.1.6
 
@@ -32,6 +32,7 @@ CREATE TABLE `users` (
   `first_name` varchar(50) NOT NULL,
   `last_name` varchar(50) NOT NULL,
   `email` varchar(256) NOT NULL,
+  `phone` bigint(10) DEFAULT NULL,
   `password` varchar(256) NOT NULL,
   `created_at` timestamp NOT NULL DEFAULT current_timestamp(),
   `auth` int(11) NOT NULL DEFAULT 0,
@@ -42,11 +43,8 @@ CREATE TABLE `users` (
 -- Dumping data for table `users`
 --
 
-INSERT INTO `users` (`id`, `first_name`, `last_name`, `email`, `password`, `created_at`, `auth`, `connect`) VALUES
-(2, 'test', 'test', 'test', 'test', '2023-06-06 17:47:41', 0, ''),
-(3, 'Kartikeya', 'Saini', 'kudlu2004@gmail.com', '12', '2023-06-06 17:49:26', 0, '1'),
-(4, '12', '12', 'test@gmail.com', '12', '2023-06-06 18:47:53', 0, ''),
-(5, '12', '12', 'tes2t@gmail.com', '12', '2023-06-06 18:49:13', 0, '');
+INSERT INTO `users` (`id`, `first_name`, `last_name`, `email`, `phone`, `password`, `created_at`, `auth`, `connect`) VALUES
+(9, 'Kartik', 'Saini', 'kudlu2004@gmail.com', 1234567890, '1234', '2023-06-07 14:13:59', 1, '1');
 
 --
 -- Indexes for dumped tables
@@ -66,7 +64,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

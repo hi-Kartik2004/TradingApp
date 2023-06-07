@@ -187,6 +187,15 @@ form {
   background-color: transparent;
 }
 
+.flex {
+  display: flex;
+  /* gap: 0.5rem; */
+}
+
+.green__text {
+  color: var(--green-color);
+}
+
 /* =====================Navbar====================== */
 
 .navbar {
@@ -826,4 +835,102 @@ h5 {
   .newsletter__wrapper form {
     flex-direction: column;
   }
+}
+
+/* ============= Profile Page ============= */
+.profile {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.profile__wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 8rem 1rem;
+}
+
+.affiliate__link {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  /* background-color: blue; */
+  max-width: 600px;
+  width: 100%;
+}
+
+.profile__heading {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  gap: 1.5rem;
+
+  /* background-color: red; */
+}
+
+.long__input {
+  max-width: 700px !important;
+  width: 100% !important;
+}
+
+.profile__heading span {
+  display: flex;
+  justify-content: center;
+  max-width: 80px;
+  width: 100%;
+  align-items: center;
+  font-size: 0.8rem !important;
+}
+
+@media screen and (max-width: 563px) {
+  .affiliate__link {
+    flex-direction: column-reverse;
+    gap: 1rem;
+  }
+
+  /* .profile__heading {
+    flex-direction: column-reverse;
+  } */
+}
+
+/* ====================== User Info ============== */
+.user__info {
+  display: flex;
+  flex-direction: column;
+  background-color: red;
+  padding: 3rem 2rem;
+  border-radius: 1rem;
+  /* text-align: ; */
+  max-width: 400px;
+  width: 100%;
+  /* justify-content: space-between; */
+  gap: 2rem;
+  /* align-items: center; */
+  /* justify-content: center; */
+  margin-top: 4rem;
+  /* background-color: blue; */
+  background-color: var(--card-color);
+  border: 2px solid var(--border-color);
+}
+
+.user__info h4 {
+  text-align: center;
+}
+
+.info__cell {
+  gap: 0.5rem;
+}
+
+.user__info .btn__wrapper {
+  flex-direction: column;
+}
+
+.user__info .hero__green__btn {
+  width: 100% !important;
+  max-width: 100% !important;
 }
