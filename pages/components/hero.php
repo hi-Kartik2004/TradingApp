@@ -68,7 +68,7 @@
 </section>
 
 <section class="hero__stocks__wrapper">
-    <div class="hero__stocks container">
+    <div class="hero__stocks container" id="hero-stocks">
         <div class="stocks__card">
             <div class="card__top">
                 <div>
@@ -84,153 +84,12 @@
             </div>
 
             <div class="card__bottom">
-                <h6>$ 25,9991.62</h6>
-                <h4>(-3.08%)</h4>
-            </div>
-        </div>
-
-        <div class="stocks__card">
-            <div class="card__top">
-                <div>
-                    <i class='bx bxl-bitcoin'></i>
-                    <!-- <img src="pages/img/logo4.png" alt="card-logo"> -->
-                </div>
-
-                <div class="card__heading">
-                    <h6>BTC</h6>
-                    <span>Bitcoin</span>
-                </div>
-
-            </div>
-
-            <div class="card__bottom">
-                <h6>$ 25,9991.62</h6>
-                <h4>(-3.08%)</h4>
-            </div>
-        </div>
-
-        <div class="stocks__card">
-            <div class="card__top">
-                <div>
-                    <i class='bx bxl-bitcoin'></i>
-                    <!-- <img src="pages/img/logo4.png" alt="card-logo"> -->
-                </div>
-
-                <div class="card__heading">
-                    <h6>BTC</h6>
-                    <span>Bitcoin</span>
-                </div>
-
-            </div>
-
-            <div class="card__bottom">
-                <h6>$ 25,9991.62</h6>
-                <h4>(-3.08%)</h4>
-            </div>
-        </div>
-
-        <div class="stocks__card">
-            <div class="card__top">
-                <div>
-                    <i class='bx bxl-bitcoin'></i>
-                    <!-- <img src="pages/img/logo4.png" alt="card-logo"> -->
-                </div>
-
-                <div class="card__heading">
-                    <h6>BTC</h6>
-                    <span>Bitcoin</span>
-                </div>
-
-            </div>
-
-            <div class="card__bottom">
-                <h6>$ 25,9991.62</h6>
+                <h6>Rs 25,9991.62</h6>
                 <h4>(-3.08%)</h4>
             </div>
         </div>
 
 
-        <div class="stocks__card">
-            <div class="card__top">
-                <div>
-                    <i class='bx bxl-bitcoin'></i>
-                    <!-- <img src="pages/img/logo4.png" alt="card-logo"> -->
-                </div>
-
-                <div class="card__heading">
-                    <h6>BTC</h6>
-                    <span>Bitcoin</span>
-                </div>
-
-            </div>
-
-            <div class="card__bottom">
-                <h6>$ 25,9991.62</h6>
-                <h4>(-3.08%)</h4>
-            </div>
-        </div>
-
-        <div class="stocks__card">
-            <div class="card__top">
-                <div>
-                    <i class='bx bxl-bitcoin'></i>
-                    <!-- <img src="pages/img/logo4.png" alt="card-logo"> -->
-                </div>
-
-                <div class="card__heading">
-                    <h6>BTC</h6>
-                    <span>Bitcoin</span>
-                </div>
-
-            </div>
-
-            <div class="card__bottom">
-                <h6>$ 25,9991.62</h6>
-                <h4>(-3.08%)</h4>
-            </div>
-        </div>
-
-
-        <div class="stocks__card">
-            <div class="card__top">
-                <div>
-                    <i class='bx bxl-bitcoin'></i>
-                    <!-- <img src="pages/img/logo4.png" alt="card-logo"> -->
-                </div>
-
-                <div class="card__heading">
-                    <h6>BTC</h6>
-                    <span>Bitcoin</span>
-                </div>
-
-            </div>
-
-            <div class="card__bottom">
-                <h6>$ 25,9991.62</h6>
-                <h4>(-3.08%)</h4>
-            </div>
-        </div>
-
-
-        <div class="stocks__card">
-            <div class="card__top">
-                <div>
-                    <i class='bx bxl-bitcoin'></i>
-                    <!-- <img src="pages/img/logo4.png" alt="card-logo"> -->
-                </div>
-
-                <div class="card__heading">
-                    <h6>BTC</h6>
-                    <span>Bitcoin</span>
-                </div>
-
-            </div>
-
-            <div class="card__bottom">
-                <h6>$ 25,9991.62</h6>
-                <h4>(-3.08%)</h4>
-            </div>
-        </div>
 
     </div>
 

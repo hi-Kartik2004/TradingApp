@@ -10,7 +10,7 @@ error_reporting(0);
         <div class="logo__div">
             <a href="?home"><img src="pages/img/logo4.png" alt="logo"></a>
         </div>
-        
+
         <div class="nav__links">
             <a href="?home">Home</a>
             <a href="?exchange">Exchange</a>
@@ -63,9 +63,14 @@ error_reporting(0);
             <a href="?sell">Sell Stocks</a>
             <a href="?stocks">Open order</a>
             <a href="?history">Trade History</a>
-            <a href="?login">Login</a>
-            <a href="?register">Register</a>
-            <a href="?profile">[profile]</a>
+            <?php if (isset($_SESSION['login']['status']) && $_SESSION["login"]["status"]) {
+                echo ' <a href="?profile">View Profile</a>
+                <a href="?logout">Logout</a>';
+            } else {
+                echo ' <a href="?login">Login</a>
+                <a href="?register">Register</a>';
+            } ?>
+
         </div>
 
     </div>

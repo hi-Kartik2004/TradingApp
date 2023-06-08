@@ -1,0 +1,1 @@
+<h1>The is the buy stocks page</h1>

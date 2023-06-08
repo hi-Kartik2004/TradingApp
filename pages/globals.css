@@ -70,6 +70,7 @@
   --light-gray-color: #343439;
   --white-color: #ffffff;
   --card-color: #0d1016;
+  --red-color: rgb(255, 78, 78);
 }
 
 /* =================Utility Classes================= */
@@ -155,6 +156,10 @@ a {
   -webkit-user-select: none;
 }
 
+a:hover {
+  opacity: 1;
+}
+
 u {
   background-color: transparent;
   text-underline-offset: 0.35rem;
@@ -196,15 +201,22 @@ form {
   color: var(--green-color);
 }
 
+.red__text {
+  color: var(--red-color);
+}
+
 /* =====================Navbar====================== */
 
 .navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
   display: flex;
   justify-content: center;
   align-items: center;
   background-color: var(--black-color);
-  position: absolute;
-  top: 0px;
+  /* position: absolute; */
+
   width: 100%;
   z-index: 99999999;
   /* margin-bottom: 2rem; */
@@ -272,6 +284,10 @@ form {
   -webkit-user-select: none;
 }
 
+.dropdown__wrapper p:hover {
+  opacity: 1;
+}
+
 .mobile__nav {
   display: none;
 }
@@ -309,9 +325,9 @@ form {
   }
 
   .mobile__nav {
-    position: absolute;
+    position: fixed;
     display: flex;
-    top: 4.5rem;
+    top: 4rem;
     left: 0px;
     flex-direction: column;
     gap: 1rem;
@@ -332,7 +348,7 @@ form {
 /* ==============Login Card============ */
 
 .login__wrapper {
-  margin-top: 6rem;
+  margin: 6rem 0rem;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -400,7 +416,7 @@ h5 {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-top: 0.2rem;
+  margin: 0.2rem 0rem;
 }
 
 .green__btn {
@@ -418,7 +434,7 @@ h5 {
 
 @media screen and (max-width: 376px) {
   .login__wrapper {
-    margin-top: 5rem !important;
+    margin: 5rem 0rem !important;
   }
 }
 
@@ -898,6 +914,20 @@ h5 {
   } */
 }
 
+/* ================= profile__cards__wrapper =============== */
+.profile__cards__wrapper {
+  margin: 4rem 0rem;
+  display: flex;
+  gap: 2rem;
+}
+@media screen and (max-width: 826px) {
+  .profile__cards__wrapper {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
 /* ====================== User Info ============== */
 .user__info {
   display: flex;
@@ -912,7 +942,6 @@ h5 {
   gap: 2rem;
   /* align-items: center; */
   /* justify-content: center; */
-  margin-top: 4rem;
   /* background-color: blue; */
   background-color: var(--card-color);
   border: 2px solid var(--border-color);
@@ -933,4 +962,76 @@ h5 {
 .user__info .hero__green__btn {
   width: 100% !important;
   max-width: 100% !important;
+}
+
+/* ============== Profile Table =============== */
+.table-wrapper {
+  position: relative;
+  margin-bottom: 20px;
+  overflow: hidden;
+  /* border: 2px solid var(--darker-border-color); */
+  /* padding: 0.5rem 0.75rem; */
+  width: 100%;
+  max-width: 800px;
+  width: 100%;
+  /* padding: 3rem 2rem; */
+}
+
+@media screen and (max-width: 424px) {
+  .hide-mobile {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 350px) {
+  .table-wrapper {
+    max-width: 280px;
+  }
+}
+
+th,
+td {
+  padding: 9px 10px;
+  border: 2px solid var(--border-color);
+}
+
+th {
+  background-color: var(--gray-color);
+}
+
+.pinned {
+  display: none;
+}
+
+.scrollable {
+  max-height: 400px;
+  overflow-y: scroll;
+}
+
+.scrollable table {
+  width: 100%;
+}
+
+@media (max-width: 1100px) {
+  .scrollable {
+    overflow-x: scroll;
+    overflow-y: scroll;
+    max-height: 500px;
+  }
+
+  /* .pinned {
+    display: block;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 20%;
+    overflow: hidden;
+    overflow-x: scroll;
+  } */
+
+  /* table {
+    border-right: none;
+    border-left: none;
+    width: 100%;
+  }  */
 }

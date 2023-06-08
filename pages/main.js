@@ -1,4 +1,6 @@
 console.log("Js has been loaded");
+
+
 //============ Navbar dropdown toggle =============
 const financeLink = document.getElementById("finance-link");
 const tradeLink = document.getElementById("trade-link");
@@ -21,8 +23,6 @@ for (let i = 0; i < allDropDownLinks.length; i++) {
     }
   });
 }
-
-
 
 // ============= mobile Nav ===========
 

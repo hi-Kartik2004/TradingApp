@@ -58,8 +58,8 @@ function sendVerificationMail($receiver)
         echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
     }
     if ($result) {
-        header("location:../?register");
         $_SESSION["err"]["err_msg"] = "Verfication mail has been sent to your mail id";
+        header("location:../?login");
     }
     return $code;
 }
@@ -77,7 +77,7 @@ function sendForgotMail($receiver, $password)
     $_SESSION["forgot_code"] = $code;
     try {
         //Server settings
-        $mail->SMTPDebug = SMTP::DEBUG_SERVER;                      //Enable verbose debug output
+        // $mail->SMTPDebug = SMTP::DEBUG_SERVER;                      //Enable verbose debug output
         $mail->isSMTP();                                            //Send using SMTP
         $mail->Host       = 'smtp.gmail.com';        //gmail             //Set the SMTP server to send through
         $mail->SMTPAuth   = true;                                   //Enable SMTP authentication

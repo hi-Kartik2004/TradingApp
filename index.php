@@ -31,6 +31,8 @@ if (isset($_SESSION["login"]["status"]) && $_SESSION["login"]["status"] == 1) {
         include("pages/components/edit_profile.php");
     } else if (isset($_GET["edit-password"])) {
         include("pages/components/edit_password.php");
+    } else if (isset($_GET["buy"])) {
+        include("pages/components/buy.php");
     } else {
         echo "<h1 style='text-align:center; margin: 2.5rem;'>404 Page not found</h1>";
     }

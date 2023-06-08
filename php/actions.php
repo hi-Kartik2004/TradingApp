@@ -12,10 +12,53 @@ $conn = mysqli_connect(server, host, password, db_name);
 // ============= Logout ============
 
 if (isset($_GET['logout'])) {
-    unset($_SESSION);
-    session_destroy();
-    header("location: ../../?home");
+    global $conn;
+    $email = $_SESSION["login"]["data"]["email"];
+    $setLoginQuery = "UPDATE `users` SET `connect` = '0' WHERE `users`.`email` = '$email';";
+    $run2 = mysqli_query($conn, $setLoginQuery);
+    if ($run2) {
+        // Handling the logout for details_table
+
+        // Select the maximum `updated_at` value for the given email
+        $subQuery = "SELECT MAX(`updated_at`) FROM `user_details` WHERE `email` = '$email'";
+        $subResult = mysqli_query($conn, $subQuery);
+
+        if ($subResult && mysqli_num_rows($subResult) > 0) {
+            // Fetch the maximum updated_at value
+            $row = mysqli_fetch_assoc($subResult);
+            $maxUpdatedAt = $row['MAX(`updated_at`)'];
+
+            // Update the status column to 0 for the rows that match the email and have the maximum updated_at value
+            $updateQuery = "UPDATE `user_details` SET `status` = 0 WHERE `email` = '$email';";
+            $updateResult = mysqli_query($conn, $updateQuery);
+
+            if ($updateResult) {
+                // echo "Account status updated successfully for the most recent record.";
+                // echo "inside";
+                unset($_SESSION);
+                session_destroy();
+                header("location: ../../?home");
+            } else {
+                $_SESSION["err"]["err_msg"] = "Could not update Login History!";
+                unset($_SESSION);
+                session_destroy();
+                header("location: ../../?login");
+            }
+        } else {
+            $_SESSION["err"]["err_msg"] = "No login history found!";
+            unset($_SESSION);
+            session_destroy();
+            header("location: ../../?login");
+        }
+    }
+} else {
+    $_SESSION["err"] = array();
+    $_SESSION["err"]["err_msg"] = "Unable to connect with the database!";
+    // echo "Unable to connect with the database";
+    header("location: ../?profile");
 }
+
+
 
 //=============== Handling register ================
 
@@ -47,7 +90,6 @@ if (isset($_GET['register'])) {
                 sendVerificationMail($email);
             }
         } else {
-            $_SESSION["err"] = array();
             $_SESSION["err"]["err_msg"] = "Password Mismatch";
             header("location: ../?register");
         }
@@ -57,6 +99,7 @@ if (isset($_GET['register'])) {
 }
 
 // ============ Verification =============
+
 if (isset($_GET["verify"])) {
     $code = $_GET["verify"];
     // echo $code;
@@ -67,7 +110,8 @@ if (isset($_GET["verify"])) {
         $lastName = $_SESSION["prev_lastname"];
         $email = $_SESSION["prev_email"];
         $password = $_SESSION["prev_password"];
-        $query = "INSERT INTO `users` (`first_name`, `last_name`, `email`, `password`,`auth`, `connect`) VALUES ('$firstName', '$lastName', '$email', '$password', 1, '');";
+        $ip = $_SERVER['REMOTE_ADDR'];
+        $query = "INSERT INTO `users` (`first_name`, `last_name`, `email`, `password`,`auth`, `connect`, `ip`) VALUES ('$firstName', '$lastName', '$email', '$password', 1, 'v', '$ip' );";
         $run = mysqli_query($conn, $query);
 
         if ($run) {
@@ -79,12 +123,12 @@ if (isset($_GET["verify"])) {
         } else {
             // echo "Failed to insert";
             $_SESSION["err"] = array();
-            $_SESSION["err"]["err_msg"] = "Something went wrong!, we are working on it!";
+            $_SESSION["err"]["err_msg"] = "Verfication Failed! Something went wrong!";
             header("location: ../../?login");
         }
     } else {
         $_SESSION["err"] = array();
-        $_SESSION["err"]["err_msg"] = "Something went wrong!, we are working on it!";
+        $_SESSION["err"]["err_msg"] = "Recheck if you are using the same browser which was used to register!, else Code mismtach!";
         header("location: ../../?login");
     }
 }
@@ -103,13 +147,28 @@ if (isset($_GET['login'])) {
         if (mysqli_num_rows($run) > 0) {
             // echo "User exists";
             if ($password == $data["password"]) {
-                $setLoginQuery = "UPDATE `users` SET `connect` = '1' WHERE `users`.`email` = '$email';";
+                $ip = $ipAddress = $_SERVER['REMOTE_ADDR'];
+                $setLoginQuery = "UPDATE `users` SET `connect` = '1', `ip` = '$ip' WHERE `users`.`email` = '$email';";
                 $run2 = mysqli_query($conn, $setLoginQuery);
                 if ($run2) {
                     $_SESSION["err"] = array();
                     $_SESSION["err"]["err_msg"] = "Login Success!";
                     $_SESSION["login"]["status"] = 1;
                     $_SESSION["login"]["data"] = $data;
+                    global $conn;
+                    $setLoginHistoryQuery = "INSERT INTO `user_details` (`email`, `updated_at`, `ip`, `status`) VALUES ('$email', current_timestamp(), '$ip', '1');";
+                    $runDetails = mysqli_query($conn, $setLoginHistoryQuery);
+                    if ($runDetails) {
+                    }
+                    if (!$runDetails) {
+                        $_SESSION["err"]["err_msg"] = "Could not update Login History!";
+                    }
+
+                    // Accessing the user_details for login history;
+                    $selectQuery = "SELECT * FROM `user_details` WHERE `email` = '$email';";
+                    $result = mysqli_query($conn, $selectQuery);
+                    $loginHistory = mysqli_fetch_all($result);
+                    $_SESSION["login"]["loginHistory"] = $loginHistory;
                     header("location: ../?profile");
                 } else {
                     $_SESSION["err"] = array();
@@ -143,7 +202,7 @@ if (isset($_GET['edit-profile'])) {
     $email = $_SESSION["login"]["data"]["email"];
     $phone = $_POST["phone"];
 
-    print_r($_POST);
+    // print_r($_POST);
     // echo $email;
 
     if (isset($firstName) && isset($lastName) && isset($phone)) {
@@ -171,8 +230,17 @@ if (isset($_GET['edit-profile'])) {
             if ($run) {
                 // echo "User exists";
                 $_SESSION["err"]["err_msg"] = "Details Updated Successfully!";
-                // echo "updated";
-                header("location: ../?profile");
+                $selectQuery2 = "SELECT * FROM `users` WHERE email = '$email';";
+                $run2 = mysqli_query($conn, $selectQuery2);
+                $data = mysqli_fetch_assoc($run2);
+                if (mysqli_num_rows($run2) > 0) {
+                    $_SESSION["login"]["status"] = 1;
+                    $_SESSION["login"]["data"] = $data;
+                    header("location: ../?profile");
+                } else {
+                    $_SESSION["err"]["err_msg"] = "Something went wrong!";
+                    header("location: ../?profile");
+                }
             } else {
                 // echo "failed";
                 $_SESSION["err"]["err_msg"] = "Something went wrong! Updating details failed!";
@@ -193,6 +261,7 @@ if (isset($_GET['edit-profile'])) {
 }
 
 // ================ Handling edit password ================
+
 if (isset($_GET["edit-password"])) {
     $password = $_POST["newPassword"];
     $cpassword = $_POST["cpassword"];
@@ -225,6 +294,7 @@ if (isset($_GET["edit-password"])) {
 
 
 // ============== Handling forgot Password =========
+
 if (isset($_GET["forgot"])) {
     $conn = mysqli_connect(server, host, password, db_name);
     $email = $_POST["email"];
