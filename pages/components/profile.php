@@ -67,6 +67,10 @@
                         <h6 class="green__text"><?= $_SESSION["login"]["data"]["phone"] ?></h6>
                     </div>
                     <div class="info__cell flex">
+                        <h6>Balance: </h6>
+                        <h6 class="green__text">Rs <?= $_SESSION["login"]["data"]["balance"] ?>/-</h6>
+                    </div>
+                    <div class="info__cell flex">
                         <h6>Language:</h6>
                         <h6 class="green__text">English</h6>
                     </div>
@@ -85,8 +89,8 @@
                     <div class="info__cell flex">
                         <h6>Current IP: </h6>
                         <?php
-                            $ip = $_SERVER['REMOTE_ADDR'];
-                            $shortIpAddress = substr($ip, 0, 10);
+                        $ip = $_SERVER['REMOTE_ADDR'];
+                        $shortIpAddress = substr($ip, 0, 10);
                         ?>
 
                         <h6 class="green__text"><?= $shortIpAddress ?></h6>
@@ -121,7 +125,7 @@
                                 <th class="hide-mobile">Access Id</th>
                                 <th>Access type</th>
                                 <th>IP (10 characters)</th>
-                                <th>Last Access Time</th>
+                                <th>Last Access Time (UST)</th>
                                 <th>Account <br>Status</th>
                                 <!-- <th>E-mail</th> -->
                             </tr>

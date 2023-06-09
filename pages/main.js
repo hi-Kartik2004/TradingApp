@@ -1,6 +1,5 @@
 console.log("Js has been loaded");
 
-
 //============ Navbar dropdown toggle =============
 const financeLink = document.getElementById("finance-link");
 const tradeLink = document.getElementById("trade-link");
@@ -51,3 +50,4 @@ const checkbox = document.getElementById("checkbox");
 rememberMe.addEventListener("click", () => {
   checkbox.checked = !checkbox.checked;
 });
+

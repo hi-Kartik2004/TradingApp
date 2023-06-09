@@ -14,7 +14,8 @@
 /* =========== Scrollbar =========== */
 /* Track */
 ::-webkit-scrollbar {
-  width: 10px;
+  width: 8px;
+  height: 8px;
 }
 
 /* Handle */
@@ -197,12 +198,27 @@ form {
   /* gap: 0.5rem; */
 }
 
+.flex-col {
+  flex-direction: column;
+}
+
 .green__text {
   color: var(--green-color);
 }
 
 .red__text {
   color: var(--red-color);
+}
+
+/* Handling input field number buttons */
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type="number"] {
+  -moz-appearance: textfield; /* Firefox */
 }
 
 /* =====================Navbar====================== */
@@ -254,6 +270,18 @@ form {
 
 .relative {
   position: relative;
+}
+
+.fixed {
+  position: fixed;
+  top: 0px;
+  width: 100%;
+}
+
+.sticky {
+  position: sticky;
+  top: 0px;
+  z-index: 1;
 }
 
 .dropdown {
@@ -327,7 +355,7 @@ form {
   .mobile__nav {
     position: fixed;
     display: flex;
-    top: 4rem;
+    top: 3.5rem;
     left: 0px;
     flex-direction: column;
     gap: 1rem;
@@ -425,6 +453,11 @@ h5 {
   width: 7rem;
   border-radius: 0.2rem;
   cursor: pointer;
+}
+
+.long__btn {
+  width: 100% !important;
+  text-align: center;
 }
 
 #remember-me {
@@ -1034,4 +1067,85 @@ th {
     border-left: none;
     width: 100%;
   }  */
+}
+
+/* =================== Loading animation ============ */
+.loading {
+  position: relative;
+}
+
+.loading-animation {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #000;
+}
+
+.loading-animation span {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  margin: 0 2px;
+  background-color: #fff;
+  border-radius: 50%;
+  animation: loading-animation 1s infinite;
+  box-shadow: 0 0 5px rgba(255, 255, 255, 0.8);
+}
+
+@keyframes loading-animation {
+  0% {
+    transform: scale(0);
+    opacity: 0;
+  }
+  50% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(0);
+    opacity: 0;
+  }
+}
+
+/* ==================== Page loading animation for the slider =========== */
+#page-loader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--black-color);
+  z-index: 9999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.loader {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  border: 6px solid var(--darker-border-color);
+  border-top-color: var(--green-color);
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* ============= Handling Responsive > td or current stock price in ?sell  route */
+.responsive span {
+  font-size: 1rem;
+  color: var(--green-color);
 }

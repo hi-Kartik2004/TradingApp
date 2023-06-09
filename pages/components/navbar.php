@@ -8,12 +8,12 @@ error_reporting(0);
 
     <div class="navbar__wrapper">
         <div class="logo__div">
-            <a href="?home"><img src="pages/img/logo4.png" alt="logo"></a>
+            <a href="?home"><img src="pages/img/logo5.png" alt="logo"></a>
         </div>
 
         <div class="nav__links">
             <a href="?home">Home</a>
-            <a href="?exchange">Exchange</a>
+            <!-- <a href="?exchange">Exchange</a> -->
 
             <!-- Finance dropdown -->
             <div id="finance-wrapper" class="relative dropdown__wrapper">
@@ -28,7 +28,7 @@ error_reporting(0);
             <div id="trade-wrapper" class="relative dropdown__wrapper">
                 <p id="trade-link" class="dropdown-link">Trade <i class='bx bx-chevron-down'></i></p>
                 <div id="trade-dropdown" class="none dropdown">
-                    <a href="?stocks">Open Order</a>
+                    <a href="?cart">Open Order</a>
                     <a href="?history">Trade History</a>
                 </div>
             </div>
@@ -58,10 +58,10 @@ error_reporting(0);
 
         <div class="mobile__nav none" id="mobile-nav">
             <a href="?home">Home</a>
-            <a href="?exchange">Exchange</a>
+            <!-- <a href="?exchange">Exchange</a> -->
             <a href="?buy">Buy Stocks</a>
             <a href="?sell">Sell Stocks</a>
-            <a href="?stocks">Open order</a>
+            <a href="?cart">Open order</a>
             <a href="?history">Trade History</a>
             <?php if (isset($_SESSION['login']['status']) && $_SESSION["login"]["status"]) {
                 echo ' <a href="?profile">View Profile</a>

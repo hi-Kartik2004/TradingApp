@@ -6,3 +6,4 @@ if (errorContent == "" || errorContent == " ") {
   console.log("is empty");
   error.style.padding = "0";
 }
+

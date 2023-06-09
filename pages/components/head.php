@@ -7,6 +7,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
     <link rel="stylesheet" href="./pages/globals.css">
+    <link rel="stylesheet" href="./pages/style.css">
+    <link rel="stylesheet" href="./pages/modal2.css">
+    <link href="
+https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.4/dist/locomotive-scroll.min.css
+" rel="stylesheet">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <link rel="preload" href="pages/img/slider1.png" as="image">
     <link rel="preload" href="pages/img/slider2.png" as="image">

@@ -24,7 +24,7 @@ function sendVerificationMail($receiver)
 
     // $baseurl = "http://localhost:3000/?verify=";
     $code = rand(1000, 9999);
-    $subject = "Wardiere | Verfication link inside!";
+    $subject = "Training | Verfication link inside!";
     $_SESSION["verification_code"] = $code;
     try {
         //Server settings
@@ -38,7 +38,7 @@ function sendVerificationMail($receiver)
         $mail->Port       = 465;                                    //TCP port to connect to; use 587 if you have set `SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS`
 
         //Recipients
-        $mail->setFrom('hi.kartikeyasaini@gmail.com', 'Wardiere | Learn to Trade');
+        $mail->setFrom('hi.kartikeyasaini@gmail.com', 'Trading Arena | Learn to Trade');
         // $mail->addAddress('kud', 'Joe User');     //Add a recipient
         $mail->addAddress($receiver);               //Name is optional
 
@@ -73,7 +73,7 @@ function sendForgotMail($receiver, $password)
 
     // $baseurl = "http://localhost:3000/?verify=";
     $code = rand(1000, 9999);
-    $subject = "Wardiere | Verfication link inside!";
+    $subject = "Trading Arena | Verfication link inside!";
     $_SESSION["forgot_code"] = $code;
     try {
         //Server settings
@@ -87,7 +87,7 @@ function sendForgotMail($receiver, $password)
         $mail->Port       = 465;                                    //TCP port to connect to; use 587 if you have set `SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS`
 
         //Recipients
-        $mail->setFrom('hi.kartikeyasaini@gmail.com', 'Wardiere | Learn to Trade');
+        $mail->setFrom('hi.kartikeyasaini@gmail.com', 'Trading Arena | Learn to Trade');
         // $mail->addAddress('kud', 'Joe User');     //Add a recipient
         $mail->addAddress($receiver);               //Name is optional
 
@@ -98,7 +98,7 @@ function sendForgotMail($receiver, $password)
         //Content
         $mail->isHTML(true);                                  //Set email format to HTML
         $mail->Subject = $subject;
-        $mail->Body    = 'Your Wardiere account password is <b>' . $password . '</b> if it was not you who generated this mail, contact support!';
+        $mail->Body    = 'Your Trading Arena account password is <b>' . $password . '</b> if it was not you who generated this mail, contact support!';
         // $mail->AltBody = 'This is the body in plain text for non-HTML mail clients';
 
         $result = $mail->send();

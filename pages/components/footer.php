@@ -2,7 +2,7 @@
     <div class="footer__wrapper container">
         <div class="footer__left">
             <div>
-                <img src="pages/img/logo4.png" alt="logo">
+                <img src="pages/img/logo5.png" alt="logo">
                 <p>Trade with Freedom</p>
             </div>
 
