@@ -61,14 +61,14 @@
 
 <section class="about__wrapper">
     <div class="about">
-        <h4><u> Welcome to Wardiere </u></h4>
+        <h4><u> Welcome to Trading Arena </u></h4>
         <br>
 
         <p>
-            Tradebox is offering new Bitcoin cryptocurrencies to the world market. We serve our members with products built in a fairer, more accessible, and efficient manner.
+            Trading Arena is offering a arena to Mock test your investment skills in stock Market (NSE). We serve our members with stocks built in a fairer, more accessible, and efficient manner.
             <br>
             <br>
-            We are a decentralized exchange (DEX) focused on offering a premier trading experience.
+            We are a decentralized exchange focused on offering a premier stock trading experience.
         </p>
     </div>
 

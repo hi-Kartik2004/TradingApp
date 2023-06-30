@@ -35,9 +35,9 @@
             <div class="usefull__links">
                 <h6><u>Socials</u></h6>
                 <div class="footer__links">
-                    <a href=""><i class='bx bxl-facebook-square'></i> Facebook</a>
-                    <a href=""><i class='bx bxl-twitter'></i> Twitter</a>
-                    <a href=""><i class='bx bxl-linkedin'></i> Linkedin</a>
+                    <a href="#"><i class='bx bxl-facebook-square'></i> Facebook</a>
+                    <a href="#"><i class='bx bxl-twitter'></i> Twitter</a>
+                    <a href="#"><i class='bx bxl-linkedin'></i> Linkedin</a>
                 </div>
             </div>
 
