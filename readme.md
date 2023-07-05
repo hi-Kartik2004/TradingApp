@@ -13,7 +13,7 @@ Ps: Their is also a profile page where user can edit profile, monitor login hist
 ## The site is live
 https://learn-stock-trading.000webhostapp.com/?home
 
-## Installation
+## Installation & Contribution
 
 ### For the users who have git installed on their system.
 
