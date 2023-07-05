@@ -1,5 +1,5 @@
 
-<img src="https://github.com/hi-Kartik2004/TradingApp/assets/111000515/115043d1-997d-45b4-9d60-a62f690d25e7" alt="image" style="width: 100%;">
+<img src="https://github.com/hi-Kartik2004/TradingApp/assets/111000515/41674307-45a8-4ed1-99d9-d74897ce0f7b" alt="image" style="width: 100%;">
 
 
 # Trading Arena - Stock trading Stimulation (NSE - India)
