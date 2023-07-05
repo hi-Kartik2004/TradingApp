@@ -13,6 +13,28 @@ Ps: Their is also a profile page where user can edit profile, monitor login hist
 ## The site is live
 https://learn-stock-trading.000webhostapp.com/?home
 
+## Installation
+
+### For the users who have git installed on their system.
+
+
+`fork this repo` for getting started.
+
+run the below command in gitbash / terminal / powershell
+```bash
+    git clone `forked repo link`
+    cd TradingApp
+    code . 
+```
+code . is used to open the project folder in the code editor.
+
+### For the users who `don't` have git installed on their system.
+`download the zip file and then extract it` by clicking on the green code button.
+
+
+#### Feel free to raise issues / pull requests and if you liked the project make sure to give it a star ⭐
+
+## Screenshots
 
 ### Landing page
 
@@ -63,21 +85,3 @@ https://learn-stock-trading.000webhostapp.com/?home
 
 ![image](https://github.com/hi-Kartik2004/TradingApp/assets/111000515/5b984163-d076-49e3-ac99-2cc751358bb1)
 
-## Installation
-
-### For the users who have git installed on their system.
-
-
-`fork this repo` for getting started.
-
-run the below command in gitbash / terminal / powershell
-```bash
-    git clone `forked repo link`
-    cd TradingApp
-    code .  -> To open it in code editor
-```
-### For the users who `don't` have git installed on their system.
-`download the zip file and then extract it` by clicking on the green code button.
-
-
-#### Feel free to raise issues / pull request and if you liked the project make sure to give it a star ⭐
