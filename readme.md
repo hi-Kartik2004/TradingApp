@@ -13,6 +13,13 @@ Ps: Their is also a profile page where user can edit profile, monitor login hist
 ## The site is live
 https://learn-stock-trading.000webhostapp.com/?home
 
+## Temporary login credentials
+```bash
+    Email: test@gmail.com
+    Password: 1234
+
+```
+
 ## Installation & Contribution
 
 ### For the users who have git installed on their system.
