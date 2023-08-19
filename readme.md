@@ -4,7 +4,7 @@
 
 # Trading Arena - Stock trading Stimulation (NSE - India)
 
-This is a mock stock trading stimulation where users can signup, after email verification, login to browse live stocks pricing (live) as per National stock exchange - India, when ever a user completes his/her signup he is credited Rs 1lac (virtual currency) and the user can use this virtual curreny to buy stocks, whenever he sells the stocks the user has he/she will get amount credited as per the latest stock prices.
+This is a mock stock trading stimulation where users can signup, after email verification, login to browse live stocks pricing (live) as per National stock exchange - India, when ever a user completes his/her signup he is credited Rs 1lac (virtual currency) and the user can use this virtual curreny to buy stocks, whenever the user sells the stocks, the amount credited is as per the latest stock prices.
 
 The user can also see, transaction history, stocks bought (in hand), carts section where can monitor interested stocks.
 
